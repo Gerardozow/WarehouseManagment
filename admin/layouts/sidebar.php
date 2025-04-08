@@ -21,22 +21,6 @@ $user_level = $user_level[0]['user_level'];
             </li>
             <!-- Fin Dashboard -->
 
-            <?php if ($user_level <= 2) { ?>
-                <!-- Clientes -->
-                <li class="sidebar-header">Embarques</li>
-                <li class="sidebar-item <?= $separador == "embarques" ? "active" : ""; ?>">
-                    <a data-bs-target="#embarques_menu" data-bs-toggle="collapse" class="sidebar-link <?= $separador == "embarques" ? "" : "collapsed"; ?>"><i class="align-middle" data-feather="truck"></i>Embarques</a>
-                    <ul id="embarques_menu" class="sidebar-dropdown list-unstyled collapse <?= $separador == "embarques" ? "show" : ""; ?>">
-                        <li class="sidebar-item <?= $page == "embarque" ? "active" : ""; ?>">
-                            <a class="sidebar-link" href="./embarques.php">Lista de Embarques</a>
-                        </li>
-
-                    </ul>
-                </li>
-            <?php
-            }
-            ?>
-
             <?php
             //mostrar solo si el usuario es administrador
             if ($user_level == 1) { ?>
