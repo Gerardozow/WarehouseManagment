@@ -20,7 +20,25 @@ $user_level = $user_level[0]['user_level'];
                 <a class="sidebar-link" href="home.php"> <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span> </a>
             </li>
             <!-- Fin Dashboard -->
+            <!-- WorkOrdes -->      
+            <?php
+            //mostrar solo si el usuario es administrador
+            if ($user_level == 1) { ?>
+                <!-- Menu HR -->
+                <li class="sidebar-header">WorkOrdes</li>
 
+                <li class="sidebar-item <?= $separador == "Workorders" ? "active" : ""; ?>">
+                    <a data-bs-target="#HR_menu" data-bs-toggle="collapse" class="sidebar-link <?= $separador == "Workorders" ? "" : "collapsed"; ?>"><i class="align-middle" data-feather="users"></i>Workorders</a>
+                    <ul id="HR_menu" class="sidebar-dropdown list-unstyled collapse <?= $separador == "Workorders" ? "show" : ""; ?>">
+                        <li class="sidebar-item <?= $page == "Workorder" ? "active" : ""; ?>">
+                            <a class="sidebar-link" href="./Workordes.php">Gestion de Usuarios</a>
+                        </li>
+                    </ul>
+                </li>
+            <?php
+            }
+            ?>
+            <!-- Fin WorkOrdes -->  
             <?php
             //mostrar solo si el usuario es administrador
             if ($user_level == 1) { ?>
